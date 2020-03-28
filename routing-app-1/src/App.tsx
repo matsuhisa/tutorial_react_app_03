@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { FC } from 'react'
+import { Redirect, Route, Switch, Router } from 'react-router'
 
-function App() {
-  return (
-    <div>
-    </div>
-  );
-}
+import Home from './components/Home'
+import Characters from './components/Characters'
 
-export default App;
+const App: FC<{}> = () => (
+  <div>
+    <Switch>
+      <Route path="/characters/:code" component={Characters} ></Route>
+      <Route path="/" component={Home} ></Route>
+      <Redirect to="/"></Redirect>
+    </Switch>
+  </div>
+)
+
+export default App
