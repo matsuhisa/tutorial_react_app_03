@@ -1,6 +1,6 @@
 import React, {FC} from 'react'
 
-const range = (n: number) => ( n < 0 ? [] : Array.from(Array(n), (_, i) => i) )
+const range = (n: number) => (n < 0 ? [] : Array.from(Array(n), (_, i) => i))
 // const colors: SemanticCOLORS[] = [
 //   'red', 'orange', 'yellow', 'olive', 'green', 'teal', 'blue',
 //   'violet', 'purple', 'pink', 'brown', 'grey', 'black',
@@ -10,15 +10,15 @@ const colors: string[] = [
 ]
 
 export interface ColorfulBeadsProps {
-  counter?: number
+  count?: number
 }
 
-const ColorfulBeads: FC<ColorfulBeadsProps> = ({counter = 0}) => (
-  <span>
-    {range(counter).map((i: number) => (
-      <span key={i}>{colors[i % colors.length]}</span>
+const ColorfulBeads: FC<ColorfulBeadsProps> = ({count = 0}) => (
+  <>
+    {range(count).map((i: number) => (
+      <span key={i}>ここです。{colors[i % colors.length]}</span>
     ))}
-  </span>
+  </>
 )
 
 export default ColorfulBeads 
